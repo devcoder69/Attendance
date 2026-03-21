@@ -54,7 +54,8 @@
         // 3. Generate the Dynamic QR Link
         // We use Google's Chart API to create the QR on the fly
         const qrSize = "300x300";
-        const finalUrl = `https://chart.googleapis.com/chart?chs=${qrSize}&cht=qr&chl=${encodeURIComponent(webAppUrl)}&choe=UTF-8`;
+        const finalUrl = `https://quickchart.io/qr?size=300&text=`;
+        qrImage.src = qrApi + encodeURIComponent(finalLink)
 
         // 4. Inject into the Image tag
         document.getElementById('qrImage').src = finalUrl;
