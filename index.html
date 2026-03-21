@@ -44,21 +44,23 @@
     </div>
 
     <script>
-         // 1. SETTINGS: Change this to your Google Apps Script Web App URL
-        const webAppUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfmmTSiDrzl9vcYIuuqV8fN0QuCOcfgHFUAVjTWIbmNPGeGrg/viewform";
+        <script>
+    // 1. Your Google Apps Script Web App URL
+    const webAppUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfmmTSiDrzl9vcYIuuqV8fN0QuCOcfgHFUAVjTWIbmNPGeGrg/viewform";
 
-        // 2. Get Today's Date (YYYY-MM-DD)
-        const today = new Date().toISOString().slice(0, 10);
-        document.getElementById('dateDisplay').innerText = "Valid for: " + today;
+    // 2. Get today's date
+    const today = new Date().toISOString().slice(0, 10);
+    const finalLink = webAppUrl + "?date=" + today;
 
-        // 3. Generate the Dynamic QR Link
-        // We use Google's Chart API to create the QR on the fly
-        const qrSize = "300x300";
-        const finalUrl = `https://quickchart.io/qr?size=300&text=`;
-        qrImage.src = qrApi + encodeURIComponent(finalLink)
+    // 3. Use the modern QuickChart API (More reliable in 2026)
+    const qrImage = document.getElementById('mainQr');
+    const qrApi = "https://quickchart.io/qr?size=300&text=";
+    
+    // 4. Update the image source
+    qrImage.src = qrApi + encodeURIComponent(finalLink);
 
-        // 4. Inject into the Image tag
-        document.getElementById('qrImage').src = finalUrl;
-
+    // 5. Update the date display on screen
+    document.getElementById('dateDisplay').innerText = "Valid for: " + today;
+</script>
 </body>
 </html>
