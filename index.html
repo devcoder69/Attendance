@@ -23,7 +23,7 @@
             background: #f8f9fa; padding: 15px; border-radius: 15px;
             display: inline-block; margin-bottom: 20px; border: 1px solid #eee;
         }
-        #qrImage { width: 250px; height: 250px; display: block; }
+        #logo { width: 250px; height: 250px; display: block; }
 
         .date-box { font-weight: bold; color: #3c4043; margin-bottom: 10px; }
         .status { color: #34a853; font-size: 0.85rem; font-weight: bold; }
@@ -44,7 +44,7 @@
     </div>
 
     <script>
-        <script>
+        
     // 1. Your Google Apps Script Web App URL
     const webAppUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfmmTSiDrzl9vcYIuuqV8fN0QuCOcfgHFUAVjTWIbmNPGeGrg/viewform";
 
@@ -53,8 +53,8 @@
     const finalLink = webAppUrl + "?date=" + today;
 
     // 3. Use the modern QuickChart API (More reliable in 2026)
-    const qrImage = document.getElementById('mainQr');
-    const qrApi = "https://quickchart.io/qr?size=300&text=https://docs.google.com/forms/d/e/1FAIpQLSfmmTSiDrzl9vcYIuuqV8fN0QuCOcfgHFUAVjTWIbmNPGeGrg/viewform";
+    const qrImage = document.getElementById('logo');
+    const qrApi = "https://quickchart.io/qr?size=300&text=";
     
     // 4. Update the image source
     qrImage.src = qrApi + encodeURIComponent(finalLink);
