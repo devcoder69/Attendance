@@ -54,7 +54,9 @@
 
     // 3. Use the modern QuickChart API (More reliable in 2026)
     const qrImage = document.getElementById('logo');
-    const centerLogoUrl = "logo.png";
+    const centerLogoUrl = <div style="display: flex; justify-content: center;">
+  <img src="logo.png" alt="">
+</div>
     qrImage.src = `https://quickchart.io/qr?size=300&text=${encodeURIComponent(finalLink)}&centerImageUrl=${encodeURIComponent(centerLogoUrl)}`;
     
     // 4. Update the image source
